@@ -1,4 +1,17 @@
-# user-management-service
+# User Management Service
 
-Welcome to the **User Management Service** repository!  
-This project provides a foundational service for handling user data and authentication in a personalized learning platform.
+A secure and scalable user management microservice built with Node.js and MongoDB.
+
+## Features
+- User registration and login
+- JWT-based authentication
+- Role-based access control
+- Centralized error handling
+- Logging with Winston
+- Unit testing with Jest
+
+## Setup
+```bash
+npm install
+cp .env.example .env
+npm run dev

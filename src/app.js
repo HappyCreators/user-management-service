@@ -1,16 +1,18 @@
-const express = require('express');
-const connectDB = require('./config/db');
-const userRoutes = require('./routes/userRoutes');
-const errorHandler = require('./utils/errorHandler');
+import express from 'express';
+import helmet from 'helmet';
+import cors from 'cors';
+import morgan from 'morgan';
+import userRoutes from './routes/userRoutes.js';
+import errorHandler from './utils/errorHandler.js';
 
 const app = express();
 
-// Connect to database
-connectDB();
-
-// Middleware
+app.use(helmet());
+app.use(cors());
+app.use(morgan('dev'));
 app.use(express.json());
+
 app.use('/api/users', userRoutes);
 app.use(errorHandler);
 
-module.exports = app;
+export default app;
